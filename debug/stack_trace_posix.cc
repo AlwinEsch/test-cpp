@@ -10,6 +10,7 @@
 #include "utils/log.h"
 #include "utils/StringUtils.h"
 #include "utils/Utils.h"
+#include "system.h"
 
 #include <map>
 #include <signal.h>
@@ -233,6 +234,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* info, void* void_context)
 
 #if defined(TARGET_LINUX)
 #if ARCH_CPU_X86_FAMILY
+
   ucontext_t* context = reinterpret_cast<ucontext_t*>(void_context);
   const struct {
     const char* label;
@@ -291,10 +293,10 @@ void StackDumpSignalHandler(int signal, siginfo_t* info, void* void_context)
   const int kRegisterPadding = 16;
 #endif
 
-  for (size_t i = 0; i < base::size(registers); i++)
+  for (size_t i = 0; i < ARRAYSIZE(registers); i++)
   {
     PrintToStderr(registers[i].label);
-    internal::itoa_r(registers[i].value, buf, sizeof(buf),
+    itoa_r(registers[i].value, buf, sizeof(buf),
                      16, kRegisterPadding);
     PrintToStderr(buf);
 
