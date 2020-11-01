@@ -5,7 +5,8 @@
 // Slightly adapted for inclusion in V8.
 // Copyright 2016 the V8 project authors. All rights reserved.
 
-#include "stack_trace.h"
+#include "StackTrace.h"
+
 #include "symbolize/symbolize.h"
 #include "utils/log.h"
 #include "utils/StringUtils.h"

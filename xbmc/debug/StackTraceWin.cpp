@@ -5,7 +5,7 @@
 // Slightly adapted for inclusion in V8.
 // Copyright 2016 the V8 project authors. All rights reserved.
 
-#include "src/base/debug/stack_trace.h"
+#include "StackTrace.h"
 
 // This file can't use "src/base/win32-headers.h" because it defines symbols
 // that lead to compilation errors. But `NOMINMAX` should be defined to disable

@@ -5,7 +5,7 @@
 // Slightly adapted for inclusion in V8.
 // Copyright 2016 the V8 project authors. All rights reserved.
 
-#include "src/base/debug/stack_trace.h"
+#include "StackTrace.h"
 
 #include <signal.h>
 #include <stddef.h>
